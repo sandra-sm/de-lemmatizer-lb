@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 
-"""GiBordeaux.py: Dëse Skript erlaabt eng Analys vu Wierder (déi pro Zeil geraumt sinn) ze maache mat Hëllef vum hunspell."""
+"""Bordeaux.py: Dëse Skript erlaabt eng Analys vu Wierder (déi pro Zeil geraumt sinn) ze maache mat Hëllef vum hunspell."""
 
 __author__ = "Edson Souza Morais"
-__license__ = "GPL"
-__version__ = "3"
+__license__ = "GPL 3.0"
 
 import hunspell
 import re
@@ -30,7 +29,7 @@ r11 = re.compile("is:feminine is:singular is:plural is:eifeler")
 r12 = re.compile("fl:s[01]")
 r13 = re.compile("fl:s2")
 r14 = re.compile("fl:x0")
-r15 = re.compile("st:(\w+)", re.UNICODE)
+r15 = re.compile("st:([\w-]+)", re.UNICODE)
 
 def analyzeWords():
     fileName = "unmunched.dic"
