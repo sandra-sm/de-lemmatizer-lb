@@ -7,6 +7,7 @@ agebeezt VRB-PERF abeezen
 agebéit VRB-PERF abéien
 agebéisst VRB-PERF abéissen
 aberuff VRB-PERF aberuffen
+abestallt VRB-PERF abestellen
 abetonéiert VRB-PERF abetonéieren
 abezunn VRB-PERF abezéien
 abezu VRB-PERF-EIF abezéien
@@ -821,6 +822,7 @@ beschwéiert VRB-PERF beschwéieren
 beschwiert VRB-PERF beschwieren
 beschwindelt VRB-PERF beschwindelen
 beseecht VRB-PERF beseechen
+beséilt VRB-PERF beséilen
 gebëselt VRB-PERF bëselen
 besënnt VRB-PERF besënnen
 besat VRB-PERF besetzen
@@ -1420,6 +1422,7 @@ doutgeschafft VRB-PERF doutschaffen
 doutgeschloen VRB-PERF doutschloen
 doutgeschloe VRB-PERF-EIF doutschloen
 doutgetrëppelt VRB-PERF douttrëppelen
+dovugemaach VRB-PERF dovumaachen
 dragefacht VRB-PERF drafachen
 dragéiert VRB-PERF dragéieren
 draguéiert VRB-PERF draguéieren
@@ -1435,6 +1438,7 @@ drageriet VRB-PERF drarieden
 drageschloen VRB-PERF draschloen
 drageschloe VRB-PERF-EIF draschloen
 drageschwat VRB-PERF draschwätzen
+dragesat VRB-PERF drasetzen
 gedrätscht VRB-PERF drätschen
 gedréchent VRB-PERF dréchnen
 gedrechselt VRB-PERF drechselen
@@ -1936,6 +1940,7 @@ erageschloen VRB-PERF eraschloen
 erageschloe VRB-PERF-EIF eraschloen
 erageschmuggelt VRB-PERF eraschmuggelen
 erageschneit VRB-PERF eraschneien
+eragesat VRB-PERF erasetzen
 eraspadséiert VRB-PERF eraspadséieren
 eragestallt VRB-PERF erastellen
 eragestach VRB-PERF erastiechen
@@ -2001,6 +2006,7 @@ erausgepickt VRB-PERF erauspicken
 erausgepléckt VRB-PERF erausplécken
 erausgeplënnert VRB-PERF erausplënneren
 erausgepucht VRB-PERF erauspuchen
+erausgequëtscht VRB-PERF erausquëtschen
 erausgerass VRB-PERF erausräissen
 erausgerappt VRB-PERF erausrappen
 erausgeréckelt VRB-PERF erausréckelen
@@ -2039,6 +2045,7 @@ erausgeworf VRB-PERF erauswerfen
 erausgewuess VRB-PERF erauswuessen
 erausgezunn VRB-PERF erauszéien
 erausgezu VRB-PERF-EIF erauszéien
+erausgezögert VRB-PERF erauszögeren
 eraversat VRB-PERF eraversetzen
 eragewollt VRB-PERF erawëllen
 erbaarmt VRB-PERF erbaarmen
@@ -3056,6 +3063,7 @@ geheescht VRB-PERF heeschen
 geheft VRB-PERF heften
 héichgehalen VRB-PERF héichhalen
 héichgehale VRB-PERF-EIF héichhalen
+héichgejazzt VRB-PERF héichjazzen
 héichgerechent VRB-PERF héichrechnen
 gehéiert VRB-PERF héieren
 héieren VRB-PERF héieren
@@ -3222,6 +3230,7 @@ intimidéiert VRB-PERF intimidéieren
 intonéiert VRB-PERF intonéieren
 intresséiert VRB-PERF intresséieren
 intrigéiert VRB-PERF intrigéieren
+introniséiert VRB-PERF introniséieren
 inverséiert VRB-PERF inverséieren
 investéiert VRB-PERF investéieren
 investigéiert VRB-PERF investigéieren
@@ -3388,6 +3397,7 @@ gejatschelt VRB-PERF jatschelen
 gejault VRB-PERF jaulen
 gejaust VRB-PERF jausen
 gejauft VRB-PERF jauwen
+gejazzt VRB-PERF jazzen
 gejéimert VRB-PERF jéimeren
 gejéngert VRB-PERF jéngeren
 gejickt VRB-PERF jicken
@@ -4514,6 +4524,8 @@ opgeraf VRB-PERF oprafen
 opgerass VRB-PERF opräissen
 opgerappt VRB-PERF oprappen
 opgeraumt VRB-PERF opraumen
+oprechterhalen VRB-PERF oprechterhalen
+oprechterhale VRB-PERF-EIF oprechterhalen
 opgereegt VRB-PERF opreegen
 opgeregt VRB-PERF opregen
 opgeréiert VRB-PERF opréieren
@@ -4619,6 +4631,8 @@ gepärelt VRB-PERF pärelen
 parfuméiert VRB-PERF parfuméieren
 parfüméiert VRB-PERF parfüméieren
 geparkt VRB-PERF parken
+parlamentéiert VRB-PERF parlamentéieren
+parléiert VRB-PERF parléieren
 parlementéiert VRB-PERF parlementéieren
 parodéiert VRB-PERF parodéieren
 parrainéiert VRB-PERF parrainéieren
@@ -5688,6 +5702,7 @@ tentéiert VRB-PERF tentéieren
 getëppelt VRB-PERF tëppelen
 terrasséiert VRB-PERF terrasséieren
 terroriséiert VRB-PERF terroriséieren
+tertiariséiert VRB-PERF tertiariséieren
 tëschegelagert VRB-PERF tëschelageren
 tëschegelant VRB-PERF tëschelanden
 testéiert VRB-PERF testéieren
@@ -7043,6 +7058,7 @@ zermujelt VRB-PERF zermujelen
 zermürbt VRB-PERF zermürben
 zerpickt VRB-PERF zerpicken
 zerpléckt VRB-PERF zerplécken
+zerplatzt VRB-PERF zerplatzen
 zerplot VRB-PERF zerploen
 zerpouft VRB-PERF zerpoufen
 zerquetscht VRB-PERF zerquetschen
@@ -7297,6 +7313,7 @@ zréckgehalen VRB-PERF zréckhalen
 zréckgehale VRB-PERF-EIF zréckhalen
 zréckgeholl VRB-PERF zréckhuelen
 zréckkaaft VRB-PERF zréckkafen
+zréckgekämpft VRB-PERF zréckkämpfen
 zréckkomm VRB-PERF zréckkommen
 zréckkritt VRB-PERF zréckkréien
 zréckgekuckt VRB-PERF zréckkucken

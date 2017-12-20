@@ -32,7 +32,7 @@ r14 = re.compile("fl:x0")
 r15 = re.compile("st:([\w-]+)", re.UNICODE)
 
 def analyzeWords():
-    fileName = "unmunched.dic"
+    fileName = "lb_hunspell/unmunched.dic"
     with open(fileName) as f:
         for line in f:
             line = line.rstrip()
@@ -41,7 +41,7 @@ def analyzeWords():
                     addToList(line+" "+replacer(analzation.decode("utf-8"))+" "+getStem(analzation.decode("utf-8")))
                 else:
                     resultReplace = replacer(analzation.decode("utf-8"))
-                    if resultReplace.startswith("ADJ"):
+                    if resultReplace.startswith("ADJ") or resultReplace.startswith("ADJ"):
                         if line[0].islower():
                             addToList(line+" "+replacer(analzation.decode("utf-8"))+" "+getStem(analzation.decode("utf-8")))
                     elif "VRB" in resultReplace:
@@ -120,6 +120,8 @@ def replacer(analzeResult):
         return "NOUN-N-P-EIF"
     elif analzeResult.endswith("po:noun ts:masculine_singular is:feminine is:singular") or analzeResult.endswith("po:noun ts:masculine_ is:feminine is:singular"):
         return "NOUN-M2F-F-S"
+    elif analzeResult.endswith("po:noun ts:masculine_singular is:feminine is:singular is:eifeler") or analzeResult.endswith("po:noun ts:masculine_ is:feminine is:singular is:eifeler"):
+        return "NOUN-M2F-F-S-EIF"
     elif analzeResult.endswith("po:noun ts:masculine_singular is:feminine is:singular is:plural") or analzeResult.endswith("po:noun ts:masculine_ is:feminine is:singular is:plural"):
         return "NOUN-M2F-F-P"
     elif analzeResult.endswith("po:noun ts:masculine_singular is:neutral is:singular") or analzeResult.endswith("po:noun ts:masculine_ is:neutral is:singular"):
