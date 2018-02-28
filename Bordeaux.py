@@ -264,6 +264,24 @@ def replacer(analyzeResult):
         return "ADJ-PAPR-SUP-ER"
     elif analyzeResult.endswith("is:es"):
         return "NOUN-ADJ"
+    elif analyzeResult.endswith("po:verb is:ip is:1ps"):
+        return "VRB-IP-1PS"
+    elif analyzeResult.endswith("po:verb is:ip is:1ps is:eifeler"):
+        return "VRB-IP-1PS-EIF"
+    elif analyzeResult.endswith("po:verb is:ip is:2ps"):
+        return "VRB-IP-2PS"
+    elif analyzeResult.endswith("po:verb is:ip is:3ps"):
+        return "VRB-IP-3PS"
+    elif analyzeResult.endswith("po:verb is:ip is:1pp"):
+        return "VRB-IP-1PP"
+    elif analyzeResult.endswith("po:verb is:ip is:1pp is:eifeler"):
+        return "VRB-IP-1PP-EIF"
+    elif analyzeResult.endswith("po:verb is:ip is:2pp"):
+        return "VRB-IP-2PP"
+    elif analyzeResult.endswith("po:verb is:ip is:3pp"):
+        return "VRB-IP-3PP"
+    elif analyzeResult.endswith("po:verb is:ip is:3pp is:eifeler"):
+        return "VRB-IP-3PP-EIF"
     elif analyzeResult.endswith("po:verb") and r14.search(analyzeResult):
         return "VRB-ZE"
     elif analyzeResult.endswith("po:verb is:eifeler") and r14.search(analyzeResult):
