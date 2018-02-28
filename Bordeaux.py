@@ -282,7 +282,7 @@ def replacer(analyzeResult):
         return "VRB-IP-3PP"
     elif analyzeResult.endswith("po:verb is:ip is:3pp is:eifeler"):
         return "VRB-IP-3PP-EIF"
-    elif analyzeResult.endswith("po:verb") and r14.search(analyzeResult):
+    elif len(analyzeResult.split()) == 3 and analyzeResult.endswith("po:verb"):
         return "VRB-ZE"
     elif analyzeResult.endswith("po:verb is:eifeler") and r14.search(analyzeResult):
         return "VRB-ZE-EIF"
