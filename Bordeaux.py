@@ -23,9 +23,6 @@ r5 = re.compile("fl:p0")
 r6 = re.compile("fl:z[0-2]")
 r7 = re.compile("fl:h0")
 r8 = re.compile("fl:h0 is:eifeler")
-r9 = re.compile("is:feminine is:singular")
-r10 = re.compile("is:feminine is:singular is:plural")
-r11 = re.compile("is:feminine is:singular is:plural is:eifeler")
 r12 = re.compile("fl:s[01]")
 r13 = re.compile("fl:s2")
 r14 = re.compile("fl:x0")
@@ -42,7 +39,7 @@ def analyzeWords():
                 else:
                     resultReplace = replacer(analzation.decode("utf-8"))
                     if resultReplace.startswith("ADJ") or resultReplace.startswith("ADJ"):
-                        if line[0].islower():
+                        if line[0].islower() or "ADJ-TOP" in resultReplace:
                             addToList(line+" "+replacer(analzation.decode("utf-8"))+" "+getStem(analzation.decode("utf-8")))
                     elif "VRB" in resultReplace:
                         if line[0].islower():
@@ -190,6 +187,18 @@ def replacer(analyzeResult):
         return "NOUN-DIM-N-P"
     elif analyzeResult.endswith("po:noun ts:neutral_singular is:diminutive is:singular is:plural is:eifeler") or analyzeResult.endswith("po:noun ts:neutral_ is:diminutive is:singular is:plural is:eifeler"):
         return "NOUN-DIM-N-P-EIF"
+    elif analyzeResult.endswith("is:toponym is:adjective"):
+        return "ADJ-TOP"
+    elif analyzeResult.endswith("is:toponym is:masculine is:singular"):
+        return "NOUN-DEM-M-S"
+    elif analyzeResult.endswith("is:toponym is:masculine is:plural"):
+        return "NOUN-DEM-M-P"
+    elif analyzeResult.endswith("is:toponym is:masculine is:singular is:feminine is:singular"):
+        return "NOUN-M2F-DEM-F-S"
+    elif analyzeResult.endswith("is:toponym is:masculine is:singular is:feminine is:singular is:plural"):
+        return "NOUN-M2F-DEM-F-P"
+    elif analyzeResult.endswith("is:toponym is:masculine is:singular is:feminine is:singular is:plural is:eifeler"):
+        return "NOUN-M2F-DEM-F-P-EIF"
     elif analyzeResult.endswith("po:adjective"):
         return "ADJ"
     elif analyzeResult.endswith("po:adjective is:eifeler"):
@@ -216,8 +225,6 @@ def replacer(analyzeResult):
         return "ADJ-SUP-EN-EIF"
     elif analyzeResult.endswith("po:adjective is:superlative is:er"):
         return "ADJ-SUP-ER"
-    elif analyzeResult.endswith("po:adjective is:superlative is:t"):
-        return "ADJ-SUP-T"
     elif analyzeResult.endswith("po:verb is:adjective is:papa"):
         return "ADJ-PAPA"
     elif analyzeResult.endswith("po:verb is:adjective is:papa is:em"):
@@ -338,12 +345,6 @@ def replacer(analyzeResult):
         return "PRN"
     elif r8.search(analyzeResult):
         return "PRN-EIF"
-    elif r9.search(analyzeResult):
-        return "NOUN-PROPER-F-S"
-    elif r10.search(analyzeResult):
-        return "NOUN-PROPER-F-P"
-    elif r11.search(analyzeResult):
-        return "NOUN-PROPER-F-P-EIF"
     elif r12.search(analyzeResult):
         return "ZESUMMEN"
     elif r13.search(analyzeResult):
