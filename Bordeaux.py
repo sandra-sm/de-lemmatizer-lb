@@ -38,7 +38,7 @@ def analyzeWords():
                     addToList(line+" "+replacer(analzation.decode("utf-8"))+" "+getStem(analzation.decode("utf-8")))
                 else:
                     resultReplace = replacer(analzation.decode("utf-8"))
-                    if resultReplace.startswith("ADJ") or resultReplace.startswith("ADJ"):
+                    if resultReplace.startswith("ADJ") or resultReplace.startswith("ADJ") or resultReplace.startswith("ADV"):
                         if line[0].islower() or "ADJ-TOP" in resultReplace:
                             addToList(line+" "+replacer(analzation.decode("utf-8"))+" "+getStem(analzation.decode("utf-8")))
                     elif "VRB" in resultReplace:
@@ -115,35 +115,35 @@ def replacer(analyzeResult):
         return "NOUN-N-P"
     elif analyzeResult.endswith("po:noun ts:neutral_singular is:plural is:eifeler") or analyzeResult.endswith("po:noun ts:neutral_ is:plural is:eifeler"):
         return "NOUN-N-P-EIF"
-    elif analyzeResult.endswith("po:noun ts:masculine_singular is:feminine is:singular") or analyzeResult.endswith("po:noun ts:masculine_ is:feminine is:singular"):
+    elif analyzeResult.endswith("po:noun ts:masculine_singular is:m2f is:feminine is:singular") or analyzeResult.endswith("po:noun ts:masculine_ is:feminine is:singular"):
         return "NOUN-M2F-F-S"
-    elif analyzeResult.endswith("po:noun ts:masculine_singular is:feminine is:singular is:eifeler") or analyzeResult.endswith("po:noun ts:masculine_ is:feminine is:singular is:eifeler"):
+    elif analyzeResult.endswith("po:noun ts:masculine_singular is:m2f is:feminine is:singular is:eifeler") or analyzeResult.endswith("po:noun ts:masculine_ is:feminine is:singular is:eifeler"):
         return "NOUN-M2F-F-S-EIF"
-    elif analyzeResult.endswith("po:noun ts:masculine_singular is:feminine is:singular is:plural") or analyzeResult.endswith("po:noun ts:masculine_ is:feminine is:singular is:plural"):
+    elif analyzeResult.endswith("po:noun ts:masculine_singular is:m2f is:feminine is:singular is:plural") or analyzeResult.endswith("po:noun ts:masculine_ is:feminine is:singular is:plural"):
         return "NOUN-M2F-F-P"
-    elif analyzeResult.endswith("po:noun ts:masculine_singular is:neutral is:singular") or analyzeResult.endswith("po:noun ts:masculine_ is:neutral is:singular"):
+    elif analyzeResult.endswith("po:noun ts:masculine_singular is:m2f is:neutral is:singular") or analyzeResult.endswith("po:noun ts:masculine_ is:neutral is:singular"):
         return "NOUN-M2F-N-S"
-    elif analyzeResult.endswith("po:noun ts:masculine_singular is:neutral is:singular is:eifeler") or analyzeResult.endswith("po:noun ts:masculine_ is:neutral is:singular is:eifeler"):
+    elif analyzeResult.endswith("po:noun ts:masculine_singular is:m2f is:neutral is:singular is:eifeler") or analyzeResult.endswith("po:noun ts:masculine_ is:neutral is:singular is:eifeler"):
         return "NOUN-M2F-N-S-EIF"
-    elif analyzeResult.endswith("po:noun ts:masculine_singular is:neutral is:singular is:plural") or analyzeResult.endswith("po:noun ts:masculine_ is:neutral is:singular is:plural"):
+    elif analyzeResult.endswith("po:noun ts:masculine_singular is:m2f is:neutral is:singular is:plural") or analyzeResult.endswith("po:noun ts:masculine_ is:neutral is:singular is:plural"):
         return "NOUN-M2F-N-P"
-    elif analyzeResult.endswith("po:noun ts:masculine_singular is:feminine is:singular is:plural is:eifeler") or analyzeResult.endswith("po:noun ts:masculine_ is:feminine is:singular is:plural is:eifeler"):
+    elif analyzeResult.endswith("po:noun ts:masculine_singular is:m2f is:feminine is:singular is:plural is:eifeler") or analyzeResult.endswith("po:noun ts:masculine_ is:feminine is:singular is:plural is:eifeler"):
         return "NOUN-M2F-F-P-EIF"
-    elif analyzeResult.endswith("po:noun ts:feminine_singular is:masculine is:singular") or analyzeResult.endswith("po:noun ts:feminine_ is:masculine is:singular"):
+    elif analyzeResult.endswith("po:noun ts:feminine_singular is:n2m is:masculine is:singular") or analyzeResult.endswith("po:noun ts:feminine_ is:masculine is:singular"):
         return "NOUN-N2M-M-S"
-    elif analyzeResult.endswith("po:noun ts:feminine_singular is:masculine is:singular is:plural") or analyzeResult.endswith("po:noun ts:feminine_ is:masculine is:singular is:plural"):
+    elif analyzeResult.endswith("po:noun ts:feminine_singular is:n2m is:masculine is:singular is:plural") or analyzeResult.endswith("po:noun ts:feminine_ is:masculine is:singular is:plural"):
         return "NOUN-N2M-M-P"
-    elif analyzeResult.endswith("po:noun ts:feminine_singular is:feminine is:singular") or analyzeResult.endswith("po:noun ts:feminine_ is:feminine is:singular"):
+    elif analyzeResult.endswith("po:noun ts:feminine_singular is:n2f is:feminine is:singular") or analyzeResult.endswith("po:noun ts:feminine_ is:feminine is:singular"):
         return "NOUN-N2F-F-S"
-    elif analyzeResult.endswith("po:noun ts:feminine_singular is:feminine is:singular is:plural") or analyzeResult.endswith("po:noun ts:feminine_ is:feminine is:singular is:plural"):
+    elif analyzeResult.endswith("po:noun ts:feminine_singular is:n2f is:feminine is:singular is:plural") or analyzeResult.endswith("po:noun ts:feminine_ is:feminine is:singular is:plural"):
         return "NOUN-N2F-F-P"
-    elif analyzeResult.endswith("po:noun ts:feminine_singular is:feminine is:singular is:plural is:eifeler") or analyzeResult.endswith("po:noun ts:feminine_ is:feminine is:singular is:plural is:eifeler"):
+    elif analyzeResult.endswith("po:noun ts:feminine_singular is:n2f is:feminine is:singular is:plural is:eifeler") or analyzeResult.endswith("po:noun ts:feminine_ is:feminine is:singular is:plural is:eifeler"):
         return "NOUN-N2F-F-P-EIF"
-    elif analyzeResult.endswith("po:noun ts:masculine_singular is:feminine is:diminutive is:singular"):
+    elif analyzeResult.endswith("po:noun ts:masculine_singular is:m2f is:feminine is:diminutive is:singular"):
         return "NOUN-M2F-DIM-F-S"
-    elif analyzeResult.endswith("po:noun ts:masculine_singular is:feminine is:diminutive is:singular is:eifeler"):
+    elif analyzeResult.endswith("po:noun ts:masculine_singular is:m2f is:feminine is:diminutive is:singular is:eifeler"):
         return "NOUN-M2F-DIM-F-S-EIF"
-    elif analyzeResult.endswith("po:noun ts:masculine_singular is:feminine is:diminutive is:singular is:plural"):
+    elif analyzeResult.endswith("po:noun ts:masculine_singular is:m2f is:feminine is:diminutive is:singular is:plural"):
         return "NOUN-M2F-DIM-F-P"
     elif analyzeResult.endswith("po:noun ts:masculine_singular is:nunu is:singular") or analyzeResult.endswith("po:noun ts:masculine_ is:nunu is:singular"):
         return "NOUN-NUNU-M-S"
@@ -193,11 +193,11 @@ def replacer(analyzeResult):
         return "NOUN-DEM-M-S"
     elif analyzeResult.endswith("is:toponym is:masculine is:plural"):
         return "NOUN-DEM-M-P"
-    elif analyzeResult.endswith("is:toponym is:masculine is:singular is:feminine is:singular"):
+    elif analyzeResult.endswith("is:toponym is:masculine is:singular is:m2f is:feminine is:singular"):
         return "NOUN-M2F-DEM-F-S"
-    elif analyzeResult.endswith("is:toponym is:masculine is:singular is:feminine is:singular is:plural"):
+    elif analyzeResult.endswith("is:toponym is:masculine is:singular is:m2f is:feminine is:singular is:plural"):
         return "NOUN-M2F-DEM-F-P"
-    elif analyzeResult.endswith("is:toponym is:masculine is:singular is:feminine is:singular is:plural is:eifeler"):
+    elif analyzeResult.endswith("is:toponym is:masculine is:singular is:m2f is:feminine is:singular is:plural is:eifeler"):
         return "NOUN-M2F-DEM-F-P-EIF"
     elif analyzeResult.endswith("po:adjective"):
         return "ADJ"
@@ -293,6 +293,8 @@ def replacer(analyzeResult):
         return "VRB-ZE"
     elif analyzeResult.endswith("po:verb is:eifeler") and r14.search(analyzeResult):
         return "VRB-ZE-EIF"
+    elif analyzeResult.endswith("po:verb is:papa"):
+        return "VRB-PAPA"
     elif analyzeResult.endswith("po:verb"):
         return "VRB"
     elif analyzeResult.endswith("po:verb is:eifeler"):
