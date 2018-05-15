@@ -38,14 +38,15 @@ def analyzeWords():
                     addToList(line+" "+replacer(analzation.decode("utf-8"))+" "+getStem(analzation.decode("utf-8")))
                 else:
                     resultReplace = replacer(analzation.decode("utf-8"))
-                    if resultReplace.startswith("ADJ") or resultReplace.startswith("ADJ") or resultReplace.startswith("ADV") or resultReplace.startswith("CJC") or resultReplace.startswith("PRP"):
-                        if line[0].islower() or "ADJ-TOP" in resultReplace:
+                    if resultReplace != "IGNORE":
+                        if resultReplace.startswith("ADJ") or resultReplace.startswith("ADJ") or resultReplace.startswith("ADV") or resultReplace.startswith("CJC") or resultReplace.startswith("PRP"):
+                            if line[0].islower() or "ADJ-TOP" in resultReplace:
+                                addToList(line+" "+replacer(analzation.decode("utf-8"))+" "+getStem(analzation.decode("utf-8")))
+                        elif "VRB" in resultReplace:
+                            if line[0].islower():
+                                addToList(line+" "+replacer(analzation.decode("utf-8"))+" "+getStem(analzation.decode("utf-8")))
+                        else:
                             addToList(line+" "+replacer(analzation.decode("utf-8"))+" "+getStem(analzation.decode("utf-8")))
-                    elif "VRB" in resultReplace:
-                        if line[0].islower():
-                            addToList(line+" "+replacer(analzation.decode("utf-8"))+" "+getStem(analzation.decode("utf-8")))
-                    else:
-                        addToList(line+" "+replacer(analzation.decode("utf-8"))+" "+getStem(analzation.decode("utf-8")))
     for line in resultList:
         print(line)
 
@@ -289,6 +290,42 @@ def replacer(analyzeResult):
         return "VRB-IP-3PP"
     elif analyzeResult.endswith("po:verb is:ip is:3pp is:eifeler"):
         return "VRB-IP-3PP-EIF"
+    elif analyzeResult.endswith("po:verb is:cond is:1ps"):
+        return "VRB-COND-1PS"
+    elif analyzeResult.endswith("po:verb is:cond"):
+        return "IGNORE"
+    elif analyzeResult.endswith("po:verb is:cond is:2ps"):
+        return "VRB-COND-2PS"
+    elif analyzeResult.endswith("po:verb is:cond is:3ps"):
+        return "VRB-COND-3PS"
+    elif analyzeResult.endswith("po:verb is:cond is:1pp"):
+        return "VRB-COND-1PP"
+    elif analyzeResult.endswith("po:verb is:cond is:1pp is:eifeler"):
+        return "VRB-COND-1PP-EIF"
+    elif analyzeResult.endswith("po:verb is:cond is:2pp"):
+        return "VRB-COND-2PP"
+    elif analyzeResult.endswith("po:verb is:cond is:3pp"):
+        return "VRB-COND-3PP"
+    elif analyzeResult.endswith("po:verb is:cond is:3pp is:eifeler"):
+        return "VRB-COND-3PP-EIF"
+    elif analyzeResult.endswith("po:verb is:pre"):
+        return "IGNORE"
+    elif analyzeResult.endswith("po:verb is:pre is:1ps"):
+        return "VRB-PRE-1PS"
+    elif analyzeResult.endswith("po:verb is:pre is:2ps"):
+        return "VRB-PRE-2PS"
+    elif analyzeResult.endswith("po:verb is:pre is:3ps"):
+        return "VRB-PRE-3PS"
+    elif analyzeResult.endswith("po:verb is:pre is:1pp"):
+        return "VRB-PRE-1PP"
+    elif analyzeResult.endswith("po:verb is:pre is:1pp is:eifeler"):
+        return "VRB-PRE-1PP-EIF"
+    elif analyzeResult.endswith("po:verb is:pre is:2pp"):
+        return "VRB-PRE-2PP"
+    elif analyzeResult.endswith("po:verb is:pre is:3pp"):
+        return "VRB-PRE-3PP"
+    elif analyzeResult.endswith("po:verb is:pre is:3pp is:eifeler"):
+        return "VRB-PRE-3PP-EIF"
     elif len(analyzeResult.split()) == 3 and analyzeResult.endswith("po:verb"):
         return "VRB-ZE"
     elif analyzeResult.endswith("po:verb is:eifeler") and r14.search(analyzeResult):
@@ -299,6 +336,8 @@ def replacer(analyzeResult):
         return "VRB-PAPA-EIF"
     elif analyzeResult.endswith("po:verb is:impe is:sg"):
         return "VRB-IMPE-SG"
+    elif analyzeResult.endswith("po:verb is:impe is:sg is:eifeler"):
+        return "VRB-IMPE-SG-EIF"
     elif analyzeResult.endswith("po:verb is:impe is:pl"):
         return "VRB-IMPE-PL"
     elif analyzeResult.endswith("po:verb"):
