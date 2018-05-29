@@ -17,7 +17,8 @@ keepUpperCaseAdjAndVerb = False
 # REGEX fir komplex Analysen
 r1 = re.compile("po:verb fl:[vw][0-9]$")
 r2 = re.compile("po:verb fl:[vw][0-9] fl:[vw][0-9]$")
-r3 = re.compile("po:verb fl:g0$")
+r3 = re.compile("is:papa .* po:verb fl:g0$") # hei feelt den ignore vum g9 + klappt net richteg
+r3bis = re.compile("st:.* po:verb fl:g0$")
 r4 = re.compile("po:verb fl:v[345] is:eifeler$")
 r5 = re.compile("fl:p0")
 r6 = re.compile("fl:z[0-2]")
@@ -381,7 +382,9 @@ def replacer(analyzeResult):
     elif r2.search(analyzeResult):
         return "VRB"
     elif r3.search(analyzeResult):
-        return "VRB"
+        return "VRB-PAPA"
+    elif r3bis.search(analyzeResult):
+        return "IGNORE"
     elif r4.search(analyzeResult):
         return "VRB"
     elif r5.search(analyzeResult):
